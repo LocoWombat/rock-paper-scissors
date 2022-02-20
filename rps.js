@@ -20,7 +20,6 @@ function playerTurn() {
 }
 
 
-/*
 function rps(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === 0) {
         console.log("It's a tie!");
@@ -44,18 +43,3 @@ function rps(playerSelection, computerSelection) {
 } 
 
 rps(playerSelection, computerSelection);
-*/
-
-function example() {
-    const playerSelection = playerTurn();
-    const computerSelection = computerTurn();
-    if (playerTurn() === "Rock") {
-        console.log("The computer played: Rock");
-    } else if (playerTurn() === "Scissors") {
-        console.log("The computer played: Scissors");
-    } else if (playerTurn() === "Paper") {
-        console.log("The computer played: Paper");
-    }
-}
-
-example();
