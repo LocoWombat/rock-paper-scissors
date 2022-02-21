@@ -1,46 +1,97 @@
-function computerTurn() {
+console.log("Ready to play?")
+
+function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
         randomNumber = "Rock";
-        console.log("Computer: Rock");
+        return randomNumber;
     } else if (randomNumber === 1) {
         randomNumber = "Paper";
-        console.log("Computer: Paper");
-    } else {
+        return randomNumber;
+    } else if (randomNumber === 2) {
         randomNumber = "Scissors";
-        console.log("Computer: Scissors");
+        return randomNumber;
     }
 }
 
-function playerTurn() {
-    let userPlay = prompt("Please input your choice of: Rock, paper, or scissors: ");
-    userCaseInsensitive = userPlay.charAt(0).toUpperCase() + userPlay.slice(1);
-    console.log("Player: " + userCaseInsensitive);
+
+function playerPlay() {
+    let userTurn = prompt("Please input your choice of: Rock, Paper, or Scissors: ")
+    userTurn = userTurn.charAt(0).toUpperCase() + userTurn.slice(1);
+    return userTurn;
 }
 
-const playerSelection = playerTurn();
-const computerSelection = computerTurn();
+/* Different solution attempt
+function oneGame() {
+    let result = ''
+    const playerSelection = console.log(playerPlay());
+    const computerSelection = console.log(computerPlay());
 
-function rpsGame(playerSelection, computerSelection) {
-    if (playerSelection === "Rock" && computerSelection === "Rock") {
-        console.log("It's a tie!");
-    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        console.log("You win! Paper beats Rock!");
-    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        console.log("You lose! Rock beats paper!");
-    } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        console.log("It's a tie!");
-    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        console.log("You win! Scissors beats Paper!");
-    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        console.log("You lose! Paper beats Rock!");
-    } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        console.log("It's a tie!");
+    if (playerSelection === "Rock" && computerSelection == "Rock") {
+        result = "It's a tie!";
+        return result;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log("You win! Rock beats Scissors!");
+        result = "Player wins! Rock beats Scissors.";
+        return result;
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        result = "Computer wins! Paper beats Rock.";
+        return result;
     } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        console.log("You lose! Scissors beats Paper!")
+        result = "Computer wins! Scissors beats Paper.";
+        return result;
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        result = "Player wins! Paper beats Rock.";
+        return result;
+    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        result = "Player wins! Scissors beats Paper.";
+        return result;
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        result = "Computer wins! Rock beats Scissors.";
+        return result;
+    } else if (playerSelection === "Paper" && computerSelection === "Paper") {
+        result = "It's a tie!";
+        return result;
+    } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+        result = "It's a tie!";
+        return result;
     }
-} 
+}
+*/
 
-rpsGame(playerSelection, computerSelection);
+function oneGame(playerSelection, computerSelection) {
+    let result = ''
+    if (playerSelection === "Rock" && computerSelection == "Rock") {
+        result = "It's a tie!"
+        return result;
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        result = "Player wins! Rock beats Scissors."
+        return result;
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        result = "Computer wins! Paper beats Rock."
+        return result;
+    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+        result = "Computer wins! Scissors beats Paper."
+        return result;
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        result = "Player wins! Paper beats Rock."
+        return result;
+    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        result = "Player wins! Scissors beats Paper."
+        return result;
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        result = "Computer wins! Rock beats Scissors."
+        return result;
+    } else if (playerSelection === "Paper" && computerSelection === "Paper") {
+        result = "It's a tie!"
+        return result;
+    } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+        result = "It's a tie!"
+        return result;
+    }
+}
+
+
+console.log(oneGame());
+
+
+
